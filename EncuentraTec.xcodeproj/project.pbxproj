@@ -1,0 +1,318 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AEDE69A7161543DB00B22968 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDE69A6161543DB00B22968 /* UIKit.framework */; };
+		AEDE69A9161543DB00B22968 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDE69A8161543DB00B22968 /* Foundation.framework */; };
+		AEDE69AB161543DB00B22968 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDE69AA161543DB00B22968 /* CoreGraphics.framework */; };
+		AEDE69B1161543DB00B22968 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AEDE69AF161543DB00B22968 /* InfoPlist.strings */; };
+		AEDE69B3161543DB00B22968 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDE69B2161543DB00B22968 /* main.m */; };
+		AEDE69B7161543DB00B22968 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDE69B6161543DB00B22968 /* AppDelegate.m */; };
+		AEDE69B9161543DB00B22968 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AEDE69B8161543DB00B22968 /* Default.png */; };
+		AEDE69BB161543DB00B22968 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEDE69BA161543DB00B22968 /* Default@2x.png */; };
+		AEDE69BD161543DB00B22968 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEDE69BC161543DB00B22968 /* Default-568h@2x.png */; };
+		AEDE69C0161543DB00B22968 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEDE69BE161543DB00B22968 /* MainStoryboard.storyboard */; };
+		AEDE69C3161543DB00B22968 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDE69C2161543DB00B22968 /* FirstViewController.m */; };
+		AEDE69C5161543DB00B22968 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = AEDE69C4161543DB00B22968 /* first.png */; };
+		AEDE69C7161543DB00B22968 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEDE69C6161543DB00B22968 /* first@2x.png */; };
+		AEDE69CA161543DB00B22968 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDE69C9161543DB00B22968 /* SecondViewController.m */; };
+		AEDE69CC161543DB00B22968 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = AEDE69CB161543DB00B22968 /* second.png */; };
+		AEDE69CE161543DB00B22968 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEDE69CD161543DB00B22968 /* second@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AEDE69A2161543DB00B22968 /* EncuentraTec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EncuentraTec.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEDE69A6161543DB00B22968 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AEDE69A8161543DB00B22968 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AEDE69AA161543DB00B22968 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AEDE69AE161543DB00B22968 /* EncuentraTec-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EncuentraTec-Info.plist"; sourceTree = "<group>"; };
+		AEDE69B0161543DB00B22968 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AEDE69B2161543DB00B22968 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AEDE69B4161543DB00B22968 /* EncuentraTec-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EncuentraTec-Prefix.pch"; sourceTree = "<group>"; };
+		AEDE69B5161543DB00B22968 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AEDE69B6161543DB00B22968 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AEDE69B8161543DB00B22968 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		AEDE69BA161543DB00B22968 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		AEDE69BC161543DB00B22968 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		AEDE69BF161543DB00B22968 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		AEDE69C1161543DB00B22968 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		AEDE69C2161543DB00B22968 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		AEDE69C4161543DB00B22968 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		AEDE69C6161543DB00B22968 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		AEDE69C8161543DB00B22968 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		AEDE69C9161543DB00B22968 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		AEDE69CB161543DB00B22968 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		AEDE69CD161543DB00B22968 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AEDE699F161543DB00B22968 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEDE69A7161543DB00B22968 /* UIKit.framework in Frameworks */,
+				AEDE69A9161543DB00B22968 /* Foundation.framework in Frameworks */,
+				AEDE69AB161543DB00B22968 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AEDE6997161543DB00B22968 = {
+			isa = PBXGroup;
+			children = (
+				AEDE69AC161543DB00B22968 /* EncuentraTec */,
+				AEDE69A5161543DB00B22968 /* Frameworks */,
+				AEDE69A3161543DB00B22968 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AEDE69A3161543DB00B22968 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AEDE69A2161543DB00B22968 /* EncuentraTec.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AEDE69A5161543DB00B22968 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AEDE69A6161543DB00B22968 /* UIKit.framework */,
+				AEDE69A8161543DB00B22968 /* Foundation.framework */,
+				AEDE69AA161543DB00B22968 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AEDE69AC161543DB00B22968 /* EncuentraTec */ = {
+			isa = PBXGroup;
+			children = (
+				AEDE69B5161543DB00B22968 /* AppDelegate.h */,
+				AEDE69B6161543DB00B22968 /* AppDelegate.m */,
+				AEDE69BE161543DB00B22968 /* MainStoryboard.storyboard */,
+				AEDE69C1161543DB00B22968 /* FirstViewController.h */,
+				AEDE69C2161543DB00B22968 /* FirstViewController.m */,
+				AEDE69C4161543DB00B22968 /* first.png */,
+				AEDE69C6161543DB00B22968 /* first@2x.png */,
+				AEDE69C8161543DB00B22968 /* SecondViewController.h */,
+				AEDE69C9161543DB00B22968 /* SecondViewController.m */,
+				AEDE69CB161543DB00B22968 /* second.png */,
+				AEDE69CD161543DB00B22968 /* second@2x.png */,
+				AEDE69AD161543DB00B22968 /* Supporting Files */,
+			);
+			path = EncuentraTec;
+			sourceTree = "<group>";
+		};
+		AEDE69AD161543DB00B22968 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AEDE69AE161543DB00B22968 /* EncuentraTec-Info.plist */,
+				AEDE69AF161543DB00B22968 /* InfoPlist.strings */,
+				AEDE69B2161543DB00B22968 /* main.m */,
+				AEDE69B4161543DB00B22968 /* EncuentraTec-Prefix.pch */,
+				AEDE69B8161543DB00B22968 /* Default.png */,
+				AEDE69BA161543DB00B22968 /* Default@2x.png */,
+				AEDE69BC161543DB00B22968 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AEDE69A1161543DB00B22968 /* EncuentraTec */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEDE69D1161543DB00B22968 /* Build configuration list for PBXNativeTarget "EncuentraTec" */;
+			buildPhases = (
+				AEDE699E161543DB00B22968 /* Sources */,
+				AEDE699F161543DB00B22968 /* Frameworks */,
+				AEDE69A0161543DB00B22968 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EncuentraTec;
+			productName = EncuentraTec;
+			productReference = AEDE69A2161543DB00B22968 /* EncuentraTec.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AEDE6999161543DB00B22968 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Viko Nava";
+			};
+			buildConfigurationList = AEDE699C161543DB00B22968 /* Build configuration list for PBXProject "EncuentraTec" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AEDE6997161543DB00B22968;
+			productRefGroup = AEDE69A3161543DB00B22968 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AEDE69A1161543DB00B22968 /* EncuentraTec */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AEDE69A0161543DB00B22968 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEDE69B1161543DB00B22968 /* InfoPlist.strings in Resources */,
+				AEDE69B9161543DB00B22968 /* Default.png in Resources */,
+				AEDE69BB161543DB00B22968 /* Default@2x.png in Resources */,
+				AEDE69BD161543DB00B22968 /* Default-568h@2x.png in Resources */,
+				AEDE69C0161543DB00B22968 /* MainStoryboard.storyboard in Resources */,
+				AEDE69C5161543DB00B22968 /* first.png in Resources */,
+				AEDE69C7161543DB00B22968 /* first@2x.png in Resources */,
+				AEDE69CC161543DB00B22968 /* second.png in Resources */,
+				AEDE69CE161543DB00B22968 /* second@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AEDE699E161543DB00B22968 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEDE69B3161543DB00B22968 /* main.m in Sources */,
+				AEDE69B7161543DB00B22968 /* AppDelegate.m in Sources */,
+				AEDE69C3161543DB00B22968 /* FirstViewController.m in Sources */,
+				AEDE69CA161543DB00B22968 /* SecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AEDE69AF161543DB00B22968 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AEDE69B0161543DB00B22968 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AEDE69BE161543DB00B22968 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AEDE69BF161543DB00B22968 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AEDE69CF161543DB00B22968 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AEDE69D0161543DB00B22968 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AEDE69D2161543DB00B22968 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EncuentraTec/EncuentraTec-Prefix.pch";
+				INFOPLIST_FILE = "EncuentraTec/EncuentraTec-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AEDE69D3161543DB00B22968 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EncuentraTec/EncuentraTec-Prefix.pch";
+				INFOPLIST_FILE = "EncuentraTec/EncuentraTec-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AEDE699C161543DB00B22968 /* Build configuration list for PBXProject "EncuentraTec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEDE69CF161543DB00B22968 /* Debug */,
+				AEDE69D0161543DB00B22968 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AEDE69D1161543DB00B22968 /* Build configuration list for PBXNativeTarget "EncuentraTec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEDE69D2161543DB00B22968 /* Debug */,
+				AEDE69D3161543DB00B22968 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AEDE6999161543DB00B22968 /* Project object */;
+}
