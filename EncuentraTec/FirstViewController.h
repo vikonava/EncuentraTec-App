@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "Place.h"
 
 @interface FirstViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 @property (retain, nonatomic) IBOutlet MKMapView *myMap;
 @property (nonatomic, retain) CLLocationManager *locationManager;
+@property (nonatomic, retain) Place *curPlace;
 
 @end

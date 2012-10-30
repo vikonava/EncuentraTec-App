@@ -9,6 +9,7 @@
 #import "FirstViewController.h"
 #import "Place.h"
 #import "RAILSRequest.h"
+#import "PlaceInfoViewController.h"
 
 @interface FirstViewController ()
 
@@ -231,6 +232,21 @@
     return nil;
 }
 
+#pragma mark Segue to Show Info
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+    self.curPlace = (Place *)view.annotation;
+    [self performSegueWithIdentifier:@"showPlaceInfoView" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showPlaceInfoView"]) {
+        UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
+        PlaceInfoViewController *placeInfoView = (PlaceInfoViewController *)navController.visibleViewController;
+        placeInfoView.curPlace = self.curPlace;
+    }
+}
+
 #pragma mark Special Functions
 
 - (void)setBlackOverlay {
@@ -276,7 +292,7 @@
     Place *temp;
     for(int i=0; i<[response count]; i++) {
         NSDictionary *t = [response objectAtIndex:i];
-        temp = [[Place alloc] initWithTitle:[t objectForKey:@"title"] andCoordinate:CLLocationCoordinate2DMake([[t objectForKey:@"latitude"] floatValue] , [[t objectForKey:@"longitude"] floatValue]) imageNamed:[t objectForKey:@"image"] subtitle:[t objectForKey:@"schedule"]];
+        temp = [[Place alloc] initWithTitle:[t objectForKey:@"title"] andCoordinate:CLLocationCoordinate2DMake([[t objectForKey:@"latitude"] floatValue] , [[t objectForKey:@"longitude"] floatValue]) imageNamed:[t objectForKey:@"image"] subtitle:[t objectForKey:@"schedule"] photo:@"http://img.photobucket.com/albums/v236/jluiz/DSC06254.jpg"];
         
         [self.myMap addAnnotation:temp];
         [temp release];

@@ -9,14 +9,15 @@
 #import "Place.h"
 
 @implementation Place
-@synthesize title, coordinate, image, subtitle;
+@synthesize title, coordinate, image, subtitle, photo;
  
-- (id)initWithTitle:(NSString *)ttl andCoordinate:(CLLocationCoordinate2D)c2d imageNamed:(NSString *)imagen subtitle:(NSString *)subt{
+- (id)initWithTitle:(NSString *)ttl andCoordinate:(CLLocationCoordinate2D)c2d imageNamed:(NSString *)imagen subtitle:(NSString *)subt photo:(NSString *)photourl{
 	[super init];
 	self.title = ttl;
     self.subtitle = subt;
 	coordinate = c2d;
     self.image = [UIImage imageNamed:imagen];
+    self.photo = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:photourl]]];
 	return self;
 }
  
