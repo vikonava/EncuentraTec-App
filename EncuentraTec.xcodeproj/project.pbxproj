@@ -15,6 +15,7 @@
 		AE0EADDD1615E8330053E73E /* A3.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0EADD61615E8330053E73E /* A3.png */; };
 		AE0EADDE1615E8330053E73E /* CIAP.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0EADD71615E8330053E73E /* CIAP.png */; };
 		AE0EADDF1615E8330053E73E /* A4.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0EADD81615E8330053E73E /* A4.png */; };
+		AE53E2E11649A2A3006DD1AD /* LoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE53E2E01649A2A3006DD1AD /* LoadView.m */; };
 		AE7CDEB5163ED310004B20BB /* PlaceInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7CDEB4163ED310004B20BB /* PlaceInfoViewController.m */; };
 		AEDCC267161A497E00853DA8 /* deportes.png in Resources */ = {isa = PBXBuildFile; fileRef = AEDCC266161A497E00853DA8 /* deportes.png */; };
 		AEDE69A7161543DB00B22968 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDE69A6161543DB00B22968 /* UIKit.framework */; };
@@ -67,6 +68,8 @@
 		AE0EADD61615E8330053E73E /* A3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = A3.png; sourceTree = "<group>"; };
 		AE0EADD71615E8330053E73E /* CIAP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CIAP.png; sourceTree = "<group>"; };
 		AE0EADD81615E8330053E73E /* A4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = A4.png; sourceTree = "<group>"; };
+		AE53E2DF1649A2A3006DD1AD /* LoadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadView.h; sourceTree = "<group>"; };
+		AE53E2E01649A2A3006DD1AD /* LoadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadView.m; sourceTree = "<group>"; };
 		AE7CDEB3163ED310004B20BB /* PlaceInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceInfoViewController.h; sourceTree = "<group>"; };
 		AE7CDEB4163ED310004B20BB /* PlaceInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceInfoViewController.m; sourceTree = "<group>"; };
 		AEDCC266161A497E00853DA8 /* deportes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deportes.png; sourceTree = "<group>"; };
@@ -185,6 +188,8 @@
 				AEDE69B5161543DB00B22968 /* AppDelegate.h */,
 				AEDE69B6161543DB00B22968 /* AppDelegate.m */,
 				AEDE69BE161543DB00B22968 /* MainStoryboard.storyboard */,
+				AE53E2DF1649A2A3006DD1AD /* LoadView.h */,
+				AE53E2E01649A2A3006DD1AD /* LoadView.m */,
 				AEDE69C1161543DB00B22968 /* FirstViewController.h */,
 				AEDE69C2161543DB00B22968 /* FirstViewController.m */,
 				AEDE69C8161543DB00B22968 /* SecondViewController.h */,
@@ -378,6 +383,7 @@
 				AEDE6A0E1615487200B22968 /* SBJsonUTF8Stream.m in Sources */,
 				AEDE6A0F1615487200B22968 /* SBJsonWriter.m in Sources */,
 				AE7CDEB5163ED310004B20BB /* PlaceInfoViewController.m in Sources */,
+				AE53E2E11649A2A3006DD1AD /* LoadView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

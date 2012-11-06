@@ -28,9 +28,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.title = self.curPlace.title;
     self.placeImage.image = self.curPlace.photo;
     self.tableViewOptions = [[NSArray alloc] initWithObjects:@"Descripcion", @"Comentarios", nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+   [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 
 - (void)didReceiveMemoryWarning
@@ -72,4 +77,5 @@
     [_placeImage release];
     [super dealloc];
 }
+
 @end

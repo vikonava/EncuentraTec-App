@@ -358,4 +358,10 @@ NSArray *searchResults;
     searchResults = [[allPlaces filteredArrayUsingPredicate:resultPredicate] retain];
     return YES;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.curPlace = [searchResults objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"showPlaceInfoView" sender:self];
+}
+
 @end
