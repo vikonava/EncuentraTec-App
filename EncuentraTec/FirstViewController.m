@@ -12,8 +12,11 @@
 #import "PlaceInfoViewController.h"
 
 @interface FirstViewController ()
-
 @end
+
+
+NSMutableArray *allPlaces;
+NSArray *searchResults;
 
 @implementation FirstViewController
 
@@ -28,6 +31,8 @@
     viewRegion.span.latitudeDelta = 0.0025;
     [self.myMap setRegion:viewRegion animated:NO];
     [self.myMap setDelegate:self];
+    allPlaces = [[NSMutableArray alloc] init];
+    searchResults = [[NSArray alloc] init];
 
     [self addPOIs];
     [self setBlackOverlay];
@@ -40,7 +45,10 @@
 }
 
 - (void)dealloc {
+    [allPlaces release];
+    [searchResults release];
     [_myMap release];
+    [_searchBar release];
     [super dealloc];
 }
 
@@ -241,8 +249,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showPlaceInfoView"]) {
-        UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
-        PlaceInfoViewController *placeInfoView = (PlaceInfoViewController *)navController.visibleViewController;
+        PlaceInfoViewController *placeInfoView = (PlaceInfoViewController *)segue.destinationViewController;
         placeInfoView.curPlace = self.curPlace;
     }
 }
@@ -285,17 +292,70 @@
 
 
 - (void)addPOIs {
-    RAILSRequest *req = [[RAILSRequest alloc] initWithUrlString:@"places.json" requestData:[NSMutableDictionary dictionaryWithObject:@"" forKey:@"id"]];
-    NSArray *response = [req synchronousGetJsonRequest];
-    [req release];
-
+    NSString *filePath = [[NSString alloc] initWithFormat:@"%@", [self dataFilePath]];
+    NSArray *response;
+    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+    //if (false) {
+        response = [[[NSArray alloc] initWithContentsOfFile:filePath] autorelease];
+    } else {
+        RAILSRequest *req = [[RAILSRequest alloc] initWithUrlString:@"places.json" requestData:[NSMutableDictionary dictionaryWithObject:@"" forKey:@"id"]];
+        response = [req synchronousGetJsonRequest];
+        [req release];
+        
+        [response writeToFile:filePath atomically:YES];
+    }
+    
     Place *temp;
     for(int i=0; i<[response count]; i++) {
         NSDictionary *t = [response objectAtIndex:i];
         temp = [[Place alloc] initWithTitle:[t objectForKey:@"title"] andCoordinate:CLLocationCoordinate2DMake([[t objectForKey:@"latitude"] floatValue] , [[t objectForKey:@"longitude"] floatValue]) imageNamed:[t objectForKey:@"image"] subtitle:[t objectForKey:@"schedule"] photo:@"http://img.photobucket.com/albums/v236/jluiz/DSC06254.jpg"];
         
         [self.myMap addAnnotation:temp];
+        [allPlaces addObject:temp];
         [temp release];
     }
+    [filePath release];
+}
+
+#pragma mark Places Persistance
+
+- (NSString *)dataFilePath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    return [documentsDirectory stringByAppendingPathComponent:kFilename];
+}
+
+#pragma mark Search Bar
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSInteger rows = 0;
+    
+    if ([tableView isEqual:self.searchDisplayController.searchResultsTableView]) {
+        rows = [searchResults count];
+    } else {
+        rows = [allPlaces count];
+    }
+    
+    return rows;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellId = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellId];
+    
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellId] autorelease];
+    }
+    
+    cell.textLabel.text = [(Place *)[searchResults objectAtIndex:indexPath.row] title];
+    
+    return cell;
+}
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"SELF.title contains[cd] %@", searchString];
+    [searchResults release];
+    searchResults = [[allPlaces filteredArrayUsingPredicate:resultPredicate] retain];
+    return YES;
 }
 @end

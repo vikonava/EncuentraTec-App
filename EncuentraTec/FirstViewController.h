@@ -10,9 +10,12 @@
 #import <MapKit/MapKit.h>
 #import "Place.h"
 
-@interface FirstViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
+#define kFilename @"places.plist"
+
+@interface FirstViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDataSource, UISearchDisplayDelegate>
 @property (retain, nonatomic) IBOutlet MKMapView *myMap;
 @property (nonatomic, retain) CLLocationManager *locationManager;
 @property (nonatomic, retain) Place *curPlace;
+@property (retain, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end

@@ -42,15 +42,12 @@
 #pragma mark Table View Delegates
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 1;
 }
  
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Number of rows is the number of time zones in the region for the specified section.
-    if (section == 0)
-        return [self.tableViewOptions count];
-    else
-        return 1;
+    return [self.tableViewOptions count];
 }
  
  
@@ -61,12 +58,12 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:MyIdentifier];
     }
     cell.textLabel.textAlignment = NSTextAlignmentCenter;
-    if ([indexPath section] == 0) {
-        cell.textLabel.text = [self.tableViewOptions objectAtIndex:[indexPath row]];
-    } else {
-        cell.textLabel.text = @"Regresar al Mapa";
-    }
+    cell.textLabel.text = [self.tableViewOptions objectAtIndex:[indexPath row]];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
 }
 
 - (void)dealloc {

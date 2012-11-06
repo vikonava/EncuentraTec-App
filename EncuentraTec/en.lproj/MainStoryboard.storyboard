@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C54" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
@@ -9,61 +9,68 @@
             <objects>
                 <viewController title="Mapa" id="2" customClass="FirstViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="16">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Uz-0e-HLD">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="372" id="oUm-De-KR7"/>
-                                </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="2" id="f1Z-rj-Il1"/>
                                 </connections>
                             </mapView>
-                            <searchBar contentMode="redraw" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="93u-3w-fbS">
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="KLo-M4-0Sc">
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <outlet property="delegate" destination="2" id="4eL-9D-VbF"/>
+                                    <outlet property="delegate" destination="2" id="cmg-6C-OYk"/>
                                 </connections>
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="KLo-M4-0Sc" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="7l6-sI-bPR"/>
+                            <constraint firstItem="KLo-M4-0Sc" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="RAG-kf-1xf"/>
                             <constraint firstItem="7Uz-0e-HLD" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="UbT-bS-q0x"/>
                             <constraint firstItem="7Uz-0e-HLD" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="YDV-uU-fuo"/>
-                            <constraint firstItem="93u-3w-fbS" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="ezW-uD-3YW"/>
-                            <constraint firstItem="93u-3w-fbS" firstAttribute="top" secondItem="16" secondAttribute="top" type="default" id="vDR-p3-01k"/>
-                            <constraint firstItem="93u-3w-fbS" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="z2f-v2-Egr"/>
+                            <constraint firstItem="KLo-M4-0Sc" firstAttribute="bottom" secondItem="7Uz-0e-HLD" secondAttribute="top" type="default" id="bBM-XJ-0JM"/>
+                            <constraint firstItem="KLo-M4-0Sc" firstAttribute="top" secondItem="16" secondAttribute="top" type="default" id="kds-gJ-0g2"/>
                             <constraint firstItem="7Uz-0e-HLD" firstAttribute="bottom" secondItem="16" secondAttribute="bottom" type="default" id="zfR-gN-y21"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Mapa" image="map" id="7"/>
+                    <navigationItem key="navigationItem" title="Mapa" id="687-Xk-VlH"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="myMap" destination="7Uz-0e-HLD" id="yoS-hJ-EmB"/>
-                        <outlet property="searchDisplayController" destination="Bup-6h-DyQ" id="t36-BD-qYD"/>
-                        <segue destination="MKr-hh-edX" kind="modal" identifier="showPlaceInfoView" modalTransitionStyle="flipHorizontal" id="dkR-iJ-Hw3"/>
+                        <outlet property="searchBar" destination="KLo-M4-0Sc" id="mkv-bK-uTE"/>
+                        <outlet property="searchDisplayController" destination="O6I-o7-LVW" id="dca-fR-zgP"/>
+                        <segue destination="rGa-js-ylY" kind="push" identifier="showPlaceInfoView" id="i6k-lO-hRN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="Bup-6h-DyQ">
                     <connections>
                         <outlet property="delegate" destination="2" id="Ie2-CC-h2S"/>
-                        <outlet property="searchBar" destination="93u-3w-fbS" id="rb9-h7-gMX"/>
                         <outlet property="searchContentsController" destination="2" id="g8a-NE-RoJ"/>
                         <outlet property="searchResultsDataSource" destination="2" id="TVn-iV-0bo"/>
                         <outlet property="searchResultsDelegate" destination="2" id="b84-YV-jWZ"/>
                     </connections>
                 </searchDisplayController>
+                <searchDisplayController id="O6I-o7-LVW">
+                    <connections>
+                        <outlet property="delegate" destination="2" id="Yhz-ji-rkI"/>
+                        <outlet property="searchBar" destination="KLo-M4-0Sc" id="dks-gd-pU4"/>
+                        <outlet property="searchContentsController" destination="2" id="EBN-Cx-IKV"/>
+                        <outlet property="searchResultsDataSource" destination="2" id="aRd-OV-dRJ"/>
+                        <outlet property="searchResultsDelegate" destination="2" id="jUx-1N-r0A"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="653" y="-154"/>
+            <point key="canvasLocation" x="1123" y="-190"/>
         </scene>
         <!--Place Info View Controller-->
         <scene sceneID="R5E-Ah-uNg">
             <objects>
                 <viewController id="rGa-js-ylY" customClass="PlaceInfoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zQq-ye-G03">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUY-mq-IYO">
@@ -76,35 +83,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="204" id="2vF-s3-vUR"/>
                                 </constraints>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="NCk-V5-e8I">
-                                        <rect key="frame" x="0.0" y="46" width="320" height="45"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="qKS-mJ-e4r">
-                                        <rect key="frame" x="0.0" y="91" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Bgr-Ys-dPg">
-                                        <rect key="frame" x="0.0" y="135" width="320" height="45"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                </prototypes>
                                 <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="rGa-js-ylY" id="UL4-i3-6BZ"/>
@@ -131,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="omv-v5-ENV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1621" y="-154"/>
+            <point key="canvasLocation" x="1553" y="-190"/>
         </scene>
         <!--Second View Controller - Second-->
         <scene sceneID="13">
@@ -184,7 +162,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="2" kind="relationship" relationship="viewControllers" id="26"/>
+                        <segue destination="Ynf-V7-HCL" kind="relationship" relationship="viewControllers" id="26"/>
                         <segue destination="3" kind="relationship" relationship="viewControllers" id="27"/>
                     </connections>
                 </tabBarController>
@@ -192,24 +170,24 @@
             </objects>
             <point key="canvasLocation" x="132" y="180"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="63e-jF-89h">
+        <!--Navigation Controller - Mapa-->
+        <scene sceneID="1BF-yi-xGC">
             <objects>
-                <navigationController id="MKr-hh-edX" sceneMemberID="viewController">
+                <navigationController id="Ynf-V7-HCL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Mapa" image="map" id="7"/>
                     <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Uc0-zN-aJk">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Vo-b3-LhR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="rGa-js-ylY" kind="relationship" relationship="rootViewController" id="m24-4A-sJW"/>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="L9j-SR-4D0"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MsZ-2a-ZP4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SCt-vL-e82" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1153" y="-154"/>
+            <point key="canvasLocation" x="653" y="-190"/>
         </scene>
     </scenes>
     <resources>
@@ -221,6 +199,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="myMap" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
