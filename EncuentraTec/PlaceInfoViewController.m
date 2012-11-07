@@ -7,6 +7,7 @@
 //
 
 #import "PlaceInfoViewController.h"
+#import "PlaceDescriptionViewController.h"
 #import "Place.h"
 
 @interface PlaceInfoViewController ()
@@ -28,14 +29,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.title = self.curPlace.title;
     self.placeImage.image = self.curPlace.photo;
     self.tableViewOptions = [[NSArray alloc] initWithObjects:@"Descripcion", @"Comentarios", nil];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-   [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,7 +64,20 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    switch (indexPath.row) {
+        case 0:
+            [self performSegueWithIdentifier:@"placeDescription" sender:self];
+        break;
+    }
+}
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"placeDescription"]) {
+        PlaceDescriptionViewController *placeDescription = (PlaceDescriptionViewController *)segue.destinationViewController;
+        placeDescription.teacher = nil;
+        placeDescription.place = self.curPlace;
+    }
 }
 
 - (void)dealloc {

@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Teacher.h"
 #define kFilename @"teachers.plist"
 
 @interface TeachersViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, retain) NSMutableArray *teachers;
+@property (nonatomic, retain) Teacher *curTeacher;
+@property (retain, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end

@@ -10,6 +10,7 @@
 #import "Teacher.h"
 #import "RAILSRequest.h"
 #import "MainTabBarController.h"
+#import "TeacherInfoViewController.h"
 
 @interface TeachersViewController ()
 
@@ -35,8 +36,17 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+}
+
 - (void)dealloc {
     [self.teachers release];
+    [_searchBar release];
     [super dealloc];
 }
 
@@ -64,7 +74,22 @@
     }
     
     cell.textLabel.text = [[self.teachers objectAtIndex:indexPath.row] name];
+    cell.textLabel.font = [UIFont fontWithName:@"System" size:10];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.searchBar resignFirstResponder];
+    self.curTeacher = [self.teachers objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"teacherInfo" sender:self];
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"teacherInfo"]) {
+        TeacherInfoViewController *teacherInfo = (TeacherInfoViewController *)segue.destinationViewController;
+        teacherInfo.teacher = self.curTeacher;
+    }
 }
 
 @end

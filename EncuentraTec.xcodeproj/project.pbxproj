@@ -20,6 +20,8 @@
 		AE53E2E81649C7AD006DD1AD /* TeachersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE53E2E71649C7AD006DD1AD /* TeachersViewController.m */; };
 		AE53E2EB1649C91D006DD1AD /* Teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = AE53E2EA1649C91D006DD1AD /* Teacher.m */; };
 		AE7CDEB5163ED310004B20BB /* PlaceInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7CDEB4163ED310004B20BB /* PlaceInfoViewController.m */; };
+		AED84210164AAD6400E32A62 /* PlaceDescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AED8420F164AAD6400E32A62 /* PlaceDescriptionViewController.m */; };
+		AED8BB6B164A2DD8000D16E8 /* TeacherInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AED8BB6A164A2DD8000D16E8 /* TeacherInfoViewController.m */; };
 		AEDCC267161A497E00853DA8 /* deportes.png in Resources */ = {isa = PBXBuildFile; fileRef = AEDCC266161A497E00853DA8 /* deportes.png */; };
 		AEDE69A7161543DB00B22968 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDE69A6161543DB00B22968 /* UIKit.framework */; };
 		AEDE69A9161543DB00B22968 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDE69A8161543DB00B22968 /* Foundation.framework */; };
@@ -80,6 +82,10 @@
 		AE53E2EA1649C91D006DD1AD /* Teacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Teacher.m; sourceTree = "<group>"; };
 		AE7CDEB3163ED310004B20BB /* PlaceInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceInfoViewController.h; sourceTree = "<group>"; };
 		AE7CDEB4163ED310004B20BB /* PlaceInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceInfoViewController.m; sourceTree = "<group>"; };
+		AED8420E164AAD6400E32A62 /* PlaceDescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceDescriptionViewController.h; sourceTree = "<group>"; };
+		AED8420F164AAD6400E32A62 /* PlaceDescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceDescriptionViewController.m; sourceTree = "<group>"; };
+		AED8BB69164A2DD8000D16E8 /* TeacherInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherInfoViewController.h; sourceTree = "<group>"; };
+		AED8BB6A164A2DD8000D16E8 /* TeacherInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherInfoViewController.m; sourceTree = "<group>"; };
 		AEDCC266161A497E00853DA8 /* deportes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deportes.png; sourceTree = "<group>"; };
 		AEDE69A2161543DB00B22968 /* EncuentraTec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EncuentraTec.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEDE69A6161543DB00B22968 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -194,6 +200,8 @@
 				AEDE69B5161543DB00B22968 /* AppDelegate.h */,
 				AEDE69B6161543DB00B22968 /* AppDelegate.m */,
 				AEDE69BE161543DB00B22968 /* MainStoryboard.storyboard */,
+				AED8420E164AAD6400E32A62 /* PlaceDescriptionViewController.h */,
+				AED8420F164AAD6400E32A62 /* PlaceDescriptionViewController.m */,
 				AE53E2DF1649A2A3006DD1AD /* LoadView.h */,
 				AE53E2E01649A2A3006DD1AD /* LoadView.m */,
 				AEDE69C1161543DB00B22968 /* FirstViewController.h */,
@@ -203,6 +211,8 @@
 				AEDE69AD161543DB00B22968 /* Supporting Files */,
 				AE7CDEB3163ED310004B20BB /* PlaceInfoViewController.h */,
 				AE7CDEB4163ED310004B20BB /* PlaceInfoViewController.m */,
+				AED8BB69164A2DD8000D16E8 /* TeacherInfoViewController.h */,
+				AED8BB6A164A2DD8000D16E8 /* TeacherInfoViewController.m */,
 				AE53E2E61649C7AD006DD1AD /* TeachersViewController.h */,
 				AE53E2E71649C7AD006DD1AD /* TeachersViewController.m */,
 				AE33867D164A1D00007C481F /* MainTabBarController.h */,
@@ -396,6 +406,8 @@
 				AE53E2E81649C7AD006DD1AD /* TeachersViewController.m in Sources */,
 				AE53E2EB1649C91D006DD1AD /* Teacher.m in Sources */,
 				AE33867F164A1D00007C481F /* MainTabBarController.m in Sources */,
+				AED8BB6B164A2DD8000D16E8 /* TeacherInfoViewController.m in Sources */,
+				AED84210164AAD6400E32A62 /* PlaceDescriptionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
