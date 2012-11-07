@@ -10,5 +10,6 @@
 
 @interface LoadView : UIViewController
 @property (retain, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
-
+@property (retain, nonatomic) NSMutableArray *teachers;
+@property (retain, nonatomic) NSMutableArray *places;
 @end

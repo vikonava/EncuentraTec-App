@@ -10,6 +10,7 @@
 #import "Place.h"
 #import "RAILSRequest.h"
 #import "PlaceInfoViewController.h"
+#import "MainTabBarController.h"
 
 @interface FirstViewController ()
 @end
@@ -292,29 +293,11 @@ NSArray *searchResults;
 
 
 - (void)addPOIs {
-    NSString *filePath = [[NSString alloc] initWithFormat:@"%@", [self dataFilePath]];
-    NSArray *response;
-    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
-    //if (false) {
-        response = [[[NSArray alloc] initWithContentsOfFile:filePath] autorelease];
-    } else {
-        RAILSRequest *req = [[RAILSRequest alloc] initWithUrlString:@"places.json" requestData:[NSMutableDictionary dictionaryWithObject:@"" forKey:@"id"]];
-        response = [req synchronousGetJsonRequest];
-        [req release];
-        
-        [response writeToFile:filePath atomically:YES];
+    MainTabBarController *main = (MainTabBarController *)self.tabBarController;
+    allPlaces = main.places;
+    for(int i=0; i<[allPlaces count]; i++) {
+        [self.myMap addAnnotation:[allPlaces objectAtIndex:i]];
     }
-    
-    Place *temp;
-    for(int i=0; i<[response count]; i++) {
-        NSDictionary *t = [response objectAtIndex:i];
-        temp = [[Place alloc] initWithTitle:[t objectForKey:@"title"] andCoordinate:CLLocationCoordinate2DMake([[t objectForKey:@"latitude"] floatValue] , [[t objectForKey:@"longitude"] floatValue]) imageNamed:[t objectForKey:@"image"] subtitle:[t objectForKey:@"schedule"] photo:@"http://img.photobucket.com/albums/v236/jluiz/DSC06254.jpg"];
-        
-        [self.myMap addAnnotation:temp];
-        [allPlaces addObject:temp];
-        [temp release];
-    }
-    [filePath release];
 }
 
 #pragma mark Places Persistance

@@ -15,7 +15,10 @@
 		AE0EADDD1615E8330053E73E /* A3.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0EADD61615E8330053E73E /* A3.png */; };
 		AE0EADDE1615E8330053E73E /* CIAP.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0EADD71615E8330053E73E /* CIAP.png */; };
 		AE0EADDF1615E8330053E73E /* A4.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0EADD81615E8330053E73E /* A4.png */; };
+		AE33867F164A1D00007C481F /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE33867E164A1D00007C481F /* MainTabBarController.m */; };
 		AE53E2E11649A2A3006DD1AD /* LoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE53E2E01649A2A3006DD1AD /* LoadView.m */; };
+		AE53E2E81649C7AD006DD1AD /* TeachersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE53E2E71649C7AD006DD1AD /* TeachersViewController.m */; };
+		AE53E2EB1649C91D006DD1AD /* Teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = AE53E2EA1649C91D006DD1AD /* Teacher.m */; };
 		AE7CDEB5163ED310004B20BB /* PlaceInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7CDEB4163ED310004B20BB /* PlaceInfoViewController.m */; };
 		AEDCC267161A497E00853DA8 /* deportes.png in Resources */ = {isa = PBXBuildFile; fileRef = AEDCC266161A497E00853DA8 /* deportes.png */; };
 		AEDE69A7161543DB00B22968 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDE69A6161543DB00B22968 /* UIKit.framework */; };
@@ -29,7 +32,6 @@
 		AEDE69BD161543DB00B22968 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEDE69BC161543DB00B22968 /* Default-568h@2x.png */; };
 		AEDE69C0161543DB00B22968 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEDE69BE161543DB00B22968 /* MainStoryboard.storyboard */; };
 		AEDE69C3161543DB00B22968 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDE69C2161543DB00B22968 /* FirstViewController.m */; };
-		AEDE69CA161543DB00B22968 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDE69C9161543DB00B22968 /* SecondViewController.m */; };
 		AEDE69CC161543DB00B22968 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = AEDE69CB161543DB00B22968 /* second.png */; };
 		AEDE69CE161543DB00B22968 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEDE69CD161543DB00B22968 /* second@2x.png */; };
 		AEDE69DD1615475600B22968 /* map2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEDE69DB1615475600B22968 /* map2x.png */; };
@@ -68,8 +70,14 @@
 		AE0EADD61615E8330053E73E /* A3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = A3.png; sourceTree = "<group>"; };
 		AE0EADD71615E8330053E73E /* CIAP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CIAP.png; sourceTree = "<group>"; };
 		AE0EADD81615E8330053E73E /* A4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = A4.png; sourceTree = "<group>"; };
+		AE33867D164A1D00007C481F /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
+		AE33867E164A1D00007C481F /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		AE53E2DF1649A2A3006DD1AD /* LoadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadView.h; sourceTree = "<group>"; };
 		AE53E2E01649A2A3006DD1AD /* LoadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadView.m; sourceTree = "<group>"; };
+		AE53E2E61649C7AD006DD1AD /* TeachersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TeachersViewController.h; path = ../TeachersViewController.h; sourceTree = "<group>"; };
+		AE53E2E71649C7AD006DD1AD /* TeachersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TeachersViewController.m; path = ../TeachersViewController.m; sourceTree = "<group>"; };
+		AE53E2E91649C91D006DD1AD /* Teacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Teacher.h; sourceTree = "<group>"; };
+		AE53E2EA1649C91D006DD1AD /* Teacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Teacher.m; sourceTree = "<group>"; };
 		AE7CDEB3163ED310004B20BB /* PlaceInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceInfoViewController.h; sourceTree = "<group>"; };
 		AE7CDEB4163ED310004B20BB /* PlaceInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceInfoViewController.m; sourceTree = "<group>"; };
 		AEDCC266161A497E00853DA8 /* deportes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deportes.png; sourceTree = "<group>"; };
@@ -89,8 +97,6 @@
 		AEDE69BF161543DB00B22968 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		AEDE69C1161543DB00B22968 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		AEDE69C2161543DB00B22968 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		AEDE69C8161543DB00B22968 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		AEDE69C9161543DB00B22968 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		AEDE69CB161543DB00B22968 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		AEDE69CD161543DB00B22968 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		AEDE69DB1615475600B22968 /* map2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map2x.png; sourceTree = "<group>"; };
@@ -192,13 +198,15 @@
 				AE53E2E01649A2A3006DD1AD /* LoadView.m */,
 				AEDE69C1161543DB00B22968 /* FirstViewController.h */,
 				AEDE69C2161543DB00B22968 /* FirstViewController.m */,
-				AEDE69C8161543DB00B22968 /* SecondViewController.h */,
-				AEDE69C9161543DB00B22968 /* SecondViewController.m */,
 				AEDE69CB161543DB00B22968 /* second.png */,
 				AEDE69CD161543DB00B22968 /* second@2x.png */,
 				AEDE69AD161543DB00B22968 /* Supporting Files */,
 				AE7CDEB3163ED310004B20BB /* PlaceInfoViewController.h */,
 				AE7CDEB4163ED310004B20BB /* PlaceInfoViewController.m */,
+				AE53E2E61649C7AD006DD1AD /* TeachersViewController.h */,
+				AE53E2E71649C7AD006DD1AD /* TeachersViewController.m */,
+				AE33867D164A1D00007C481F /* MainTabBarController.h */,
+				AE33867E164A1D00007C481F /* MainTabBarController.m */,
 			);
 			path = EncuentraTec;
 			sourceTree = "<group>";
@@ -249,6 +257,8 @@
 				AEDE69E61615487200B22968 /* NSObject+SBJson.m */,
 				AEDE69E71615487200B22968 /* Place.h */,
 				AEDE69E81615487200B22968 /* Place.m */,
+				AE53E2E91649C91D006DD1AD /* Teacher.h */,
+				AE53E2EA1649C91D006DD1AD /* Teacher.m */,
 				AEDE69E91615487200B22968 /* RAILSRequest.h */,
 				AEDE69EA1615487200B22968 /* RAILSRequest.m */,
 				AEDE69EB1615487200B22968 /* SBJson.h */,
@@ -367,7 +377,6 @@
 				AEDE69B3161543DB00B22968 /* main.m in Sources */,
 				AEDE69B7161543DB00B22968 /* AppDelegate.m in Sources */,
 				AEDE69C3161543DB00B22968 /* FirstViewController.m in Sources */,
-				AEDE69CA161543DB00B22968 /* SecondViewController.m in Sources */,
 				AEDE6A021615487200B22968 /* NSObject+SBJson.m in Sources */,
 				AEDE6A031615487200B22968 /* Place.m in Sources */,
 				AEDE6A041615487200B22968 /* RAILSRequest.m in Sources */,
@@ -384,6 +393,9 @@
 				AEDE6A0F1615487200B22968 /* SBJsonWriter.m in Sources */,
 				AE7CDEB5163ED310004B20BB /* PlaceInfoViewController.m in Sources */,
 				AE53E2E11649A2A3006DD1AD /* LoadView.m in Sources */,
+				AE53E2E81649C7AD006DD1AD /* TeachersViewController.m in Sources */,
+				AE53E2EB1649C91D006DD1AD /* Teacher.m in Sources */,
+				AE33867F164A1D00007C481F /* MainTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
