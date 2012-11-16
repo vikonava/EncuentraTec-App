@@ -9,6 +9,7 @@
 #import "LoadView.h"
 #import "Teacher.h"
 #import "Place.h"
+#import "Comment.h"
 #import "RAILSRequest.h"
 #import "MainTabBarController.h"
 
@@ -37,13 +38,48 @@
 - (void)viewDidAppear:(BOOL)animated {
     self.teachers = [[NSMutableArray alloc] init];
     self.places = [[NSMutableArray alloc] init];
+    self.comments = [[NSMutableArray alloc]init];
     [self getTeacherList];
     NSLog(@"Teachers Done");
     [self getPlaceList];
     NSLog(@"Places Done");
+    [self getCommentList];
+    NSLog(@"Comments Done");
     [self performSegueWithIdentifier:@"infoLoaded" sender:self];
 }
 
+
+- (void)getCommentList {
+    NSString *filePath = [[NSString alloc]initWithFormat:@"%@", [self dataFilePath:@"comments.plist"]];
+    NSArray *response;
+    NSString *url;
+    int numberOfPlaces = [self.places count];
+    if (false) {
+        response = [[[NSArray alloc] initWithContentsOfFile:filePath] autorelease];
+    } else {
+        for(int i = 1;i<=numberOfPlaces;i++)
+        {
+            url = [NSString stringWithFormat:@"places/%d/comments.json",i];
+            RAILSRequest *req = [[RAILSRequest alloc] initWithUrlString:url requestData:[NSMutableDictionary dictionaryWithObject:@"" forKey:@"id"]];
+            response = [req synchronousGetJsonRequest];
+            [req release];
+            
+            [response writeToFile:filePath atomically:YES];
+        }
+        
+    }
+    Comment *temp;
+    for(int i=0; i<[response count]; i++) {
+        NSDictionary *t = [response objectAtIndex:i];
+        temp = [[Comment alloc] initWithPlaceId:[t objectForKey:@"placeId"] comment:[t objectForKey:@"comment"]];
+        
+        NSLog(@"%@",temp.comment);
+        [self.comments addObject:temp];
+        [temp release];
+    }
+    [filePath release];
+
+}
 
 
 - (void)getTeacherList {
@@ -121,6 +157,7 @@
     MainTabBarController *main = (MainTabBarController *)segue.destinationViewController;
     main.teachers = self.teachers;
     main.places = self.places;
+    main.comments = self.comments;
     //[self.teachers release];
     //[self.places release];
 }

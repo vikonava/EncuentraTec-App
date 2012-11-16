@@ -12,5 +12,6 @@
 
 @property (nonatomic, retain) NSMutableArray *places;
 @property (nonatomic, retain) NSMutableArray *teachers;
+@property (nonatomic, retain) NSMutableArray *comments;
 
 @end

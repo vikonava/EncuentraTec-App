@@ -8,6 +8,7 @@
 
 #import "PlaceInfoViewController.h"
 #import "PlaceDescriptionViewController.h"
+#import "CommentsViewController.h"
 #import "Place.h"
 
 @interface PlaceInfoViewController ()
@@ -69,6 +70,10 @@
         case 0:
             [self performSegueWithIdentifier:@"placeDescription" sender:self];
         break;
+        case 1:
+            [self performSegueWithIdentifier:@"commentsList" sender:self];
+        break;
+            
     }
 }
 
@@ -78,6 +83,10 @@
         placeDescription.teacher = nil;
         placeDescription.place = self.curPlace;
     }
+    if ([segue.identifier isEqualToString:@"commentsList"]) {
+        CommentsViewController *showComments = (CommentsViewController *)segue.destinationViewController;
+    }
+    
 }
 
 - (void)dealloc {

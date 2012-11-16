@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3mf-S3-Quv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3mf-S3-Quv">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
@@ -106,11 +106,68 @@
                         <outlet property="optionsTableView" destination="ZN6-de-5hB" id="8rE-dD-IfZ"/>
                         <outlet property="placeImage" destination="tUY-mq-IYO" id="a4E-50-RPV"/>
                         <segue destination="xAq-go-7ke" kind="push" identifier="placeDescription" id="ZOE-pc-hKH"/>
+                        <segue destination="7Vr-KT-hbl" kind="push" identifier="commentsList" id="Kug-v5-CtU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="omv-v5-ENV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1565" y="-498"/>
+        </scene>
+        <!--Comments View Controller-->
+        <scene sceneID="MF0-jw-TMj">
+            <objects>
+                <tableViewController id="7Vr-KT-hbl" customClass="CommentsViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="BJE-dz-Xs3">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="7Vr-KT-hbl" id="xcQ-P2-aBs"/>
+                            <outlet property="delegate" destination="7Vr-KT-hbl" id="avU-4T-CXB"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="f0l-3d-gTQ"/>
+                    <connections>
+                        <segue destination="g5H-ec-rEz" kind="push" identifier="CommentInfo" id="8Pe-lF-f0v"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kzw-S7-fRp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2117" y="-635"/>
+        </scene>
+        <!--Comment Info View Controller-->
+        <scene sceneID="h7d-te-yqy">
+            <objects>
+                <viewController id="g5H-ec-rEz" customClass="CommentInfoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6u9-VH-TW6">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsf-EK-Hgi">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="367" id="pTm-h7-akH"/>
+                                </constraints>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vsf-EK-Hgi" firstAttribute="trailing" secondItem="6u9-VH-TW6" secondAttribute="trailing" type="default" id="8Fy-Dr-ybl"/>
+                            <constraint firstItem="vsf-EK-Hgi" firstAttribute="top" secondItem="6u9-VH-TW6" secondAttribute="top" constant="8" id="OqT-Sv-hjw"/>
+                            <constraint firstItem="vsf-EK-Hgi" firstAttribute="leading" secondItem="6u9-VH-TW6" secondAttribute="leading" type="default" id="fJB-kb-igG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="iN5-Iv-jk4"/>
+                    <connections>
+                        <outlet property="longComment" destination="vsf-EK-Hgi" id="Hle-aR-zEd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LrK-kk-e0z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2570" y="-642"/>
         </scene>
         <!--Place Description View Controller - Descripción-->
         <scene sceneID="zdF-9y-ihn">
@@ -443,6 +500,15 @@
         <image name="teacher" width="16" height="16"/>
     </resources>
     <classes>
+        <class className="CommentInfoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CommentInfoViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="longComment" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="CommentsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CommentsViewController.h"/>
+        </class>
         <class className="FirstViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstViewController.h"/>
             <relationships>
@@ -497,6 +563,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="CaP-Rk-Dvk"/>
+        <segue reference="ZOE-pc-hKH"/>
     </inferredMetricsTieBreakers>
 </document>
