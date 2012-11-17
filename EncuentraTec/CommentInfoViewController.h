@@ -14,4 +14,5 @@
 @property (nonatomic, retain) NSString *commentInfo;
 @property (retain, nonatomic) IBOutlet UITextView *longComment;
 
+
 @end

@@ -71,9 +71,9 @@
     Comment *temp;
     for(int i=0; i<[response count]; i++) {
         NSDictionary *t = [response objectAtIndex:i];
-        temp = [[Comment alloc] initWithPlaceId:[t objectForKey:@"placeId"] comment:[t objectForKey:@"comment"]];
+        temp = [[Comment alloc] initWithPlaceId:[t objectForKey:@"place_id"] comment:[t objectForKey:@"comment"]];
         
-        NSLog(@"%@",temp.comment);
+        NSLog(@" place id: %@",temp.placeId);
         [self.comments addObject:temp];
         [temp release];
     }

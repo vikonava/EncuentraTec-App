@@ -83,8 +83,11 @@
         placeDescription.teacher = nil;
         placeDescription.place = self.curPlace;
     }
+    
     if ([segue.identifier isEqualToString:@"commentsList"]) {
         CommentsViewController *showComments = (CommentsViewController *)segue.destinationViewController;
+        showComments.place = self.curPlace;
+                
     }
     
 }

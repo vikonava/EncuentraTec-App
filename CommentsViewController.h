@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Comment.h"
+#import "Place.h"
 #define kFilename @"comments.plist"
 
 @interface CommentsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic,retain) NSMutableArray *comments;
 @property (nonatomic, retain) Comment *curComment;
+@property (retain, nonatomic) Place *place;
 @end
