@@ -34,10 +34,114 @@
     [super viewDidLoad];
     MainTabBarController *main = (MainTabBarController *)self.tabBarController;
     self.comments = main.comments;
+           
+    self.selectedPlaceComments = [[NSMutableArray alloc]init];
+    self.placeIdAux = [NSString alloc];
     
-    
-        
 
+    if([self.place.title isEqualToString:@"Rectoria"])
+    {
+        self.placeIdAux = [NSString stringWithFormat:@"1" ];
+        self.curComment.placeId = self.placeIdAux;
+    }
+    if([self.place.title isEqualToString:@"CIAP"])
+    {
+        NSLog(@"showComments 2");
+        self.placeIdAux = [NSString stringWithFormat:@"2" ];
+        self.curComment.placeId = self.placeIdAux;
+    }
+    if([self.place.title isEqualToString:@"Gimnasio Tec"])
+    {
+        NSLog(@"showComments 2");
+        self.placeIdAux = [NSString stringWithFormat:@"3" ];
+        self.curComment.placeId = self.placeIdAux;
+    }
+    
+    if([self.place.title isEqualToString:@"Estadio Tecnologico"])
+    {
+        self.placeIdAux = [NSString stringWithFormat:@"4" ];
+        self.curComment.placeId = self.placeIdAux;
+    }
+    if([self.place.title isEqualToString:@"Centro de Biotecnologia"])
+    {
+        self.placeIdAux = [NSString stringWithFormat:@"5" ];
+        self.curComment.placeId = self.placeIdAux;
+    }
+    if([self.place.title isEqualToString:@"Aulas 6"])
+    {
+        self.placeIdAux = [NSString stringWithFormat:@"6" ];
+        self.curComment.placeId = self.placeIdAux;
+    }
+    if([self.place.title isEqualToString:@"Aulas 7"])
+    {
+        self.placeIdAux = [NSString stringWithFormat:@"7" ];
+        self.curComment.placeId = self.placeIdAux;
+    }
+    if([self.place.title isEqualToString:@"Aulas 1"])
+    {
+        self.placeIdAux = [NSString stringWithFormat:@"8" ];
+        self.curComment.placeId = self.placeIdAux;
+    }
+    if([self.place.title isEqualToString:@"Aulas 2"])
+    {
+        self.placeIdAux = [NSString stringWithFormat:@"9" ];
+        self.curComment.placeId = self.placeIdAux;
+    }
+    
+    if([self.place.title isEqualToString:@"Aulas 3"])
+    {
+        self.placeIdAux = [NSString stringWithFormat:@"10" ];
+        self.curComment.placeId = self.placeIdAux;
+    }
+    if([self.place.title isEqualToString:@"Aulas 4"])
+    {
+        self.placeIdAux = [NSString stringWithFormat:@"11" ];
+        self.curComment.placeId = self.placeIdAux;
+    }
+    if([self.place.title isEqualToString:@"Starbucks"])
+    {
+        self.placeIdAux = [NSString stringWithFormat:@"12" ];
+        self.curComment.placeId = self.placeIdAux;
+    }
+    
+    if([self.place.title isEqualToString:@"Campos Escamilla"])
+    {
+        self.placeIdAux = [NSString stringWithFormat:@"13" ];
+        self.curComment.placeId = self.placeIdAux;
+    }
+    
+    if([self.place.title isEqualToString:@"Domo acuatico"])
+    {
+        self.placeIdAux = [NSString stringWithFormat:@"14" ];
+        self.curComment.placeId = self.placeIdAux;
+    }
+    if([self.place.title isEqualToString:@"Biblioteca"])
+    {
+        self.placeIdAux = [NSString stringWithFormat:@"15" ];
+        self.curComment.placeId = self.placeIdAux;
+    }
+    if([self.place.title isEqualToString:@"CEDES"])
+    {
+        self.placeIdAux = [NSString stringWithFormat:@"16" ];
+        self.curComment.placeId = self.placeIdAux;
+    }
+    
+    //contador de objetos en el arreglo de los comentarios dado un lugar.
+    int cont = 0;
+    for(int i = 0; i < [self.comments count]; i++)
+    {
+        NSLog(@"compara %@ vs %@", [[self.comments objectAtIndex:i] placeId],self.placeIdAux);
+        if([[[self.comments objectAtIndex:i]placeId]intValue] == [self.placeIdAux intValue])
+        {
+            NSLog(@"dentro if");
+            [self.selectedPlaceComments addObject:[self.comments objectAtIndex:i] ];
+            NSLog(@"comenta %@",[[self.selectedPlaceComments objectAtIndex:cont]comment]);
+            cont++;
+            
+        }
+        
+        
+    }
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -65,125 +169,20 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.comments count];
+    return [self.selectedPlaceComments count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *placeIdAux = [NSString alloc];
     static NSString *MyIdentifier = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:MyIdentifier] autorelease];
     }
-    if([self.place.title isEqualToString:@"Rectoria"])
-    {
-        NSLog(@"showComments 1");
-        placeIdAux = [NSString stringWithFormat:@"1" ];
-        self.curComment.placeId = placeIdAux;
-    }
-    if([self.place.title isEqualToString:@"CIAP"])
-    {
-        NSLog(@"showComments 2");
-        placeIdAux = [NSString stringWithFormat:@"2" ];
-        self.curComment.placeId = placeIdAux;
-    }
-    if([self.place.title isEqualToString:@"Gimnasio Tec"])
-    {
-        NSLog(@"showComments 2");
-        placeIdAux = [NSString stringWithFormat:@"3" ];
-        self.curComment.placeId = placeIdAux;
-    }
-    
-    if([self.place.title isEqualToString:@"Estadio Tecnologico"])
-    {
-        NSLog(@"showComments 1");
-        placeIdAux = [NSString stringWithFormat:@"4" ];
-        self.curComment.placeId = placeIdAux;
-    }
-    if([self.place.title isEqualToString:@"Centro de Biotecnologia"])
-    {
-        NSLog(@"showComments 2");
-        placeIdAux = [NSString stringWithFormat:@"5" ];
-        self.curComment.placeId = placeIdAux;
-    }
-    if([self.place.title isEqualToString:@"Aulas 6"])
-    {
-        NSLog(@"showComments 2");
-        placeIdAux = [NSString stringWithFormat:@"6" ];
-        self.curComment.placeId = placeIdAux;
-    }
-    if([self.place.title isEqualToString:@"Aulas 7"])
-    {
-        NSLog(@"showComments 1");
-        placeIdAux = [NSString stringWithFormat:@"7" ];
-        self.curComment.placeId = placeIdAux;
-    }
-    if([self.place.title isEqualToString:@"Aulas 1"])
-    {
-        NSLog(@"showComments 2");
-        placeIdAux = [NSString stringWithFormat:@"8" ];
-        self.curComment.placeId = placeIdAux;
-    }
-    if([self.place.title isEqualToString:@"Aulas 2"])
-    {
-        NSLog(@"showComments 2");
-        placeIdAux = [NSString stringWithFormat:@"9" ];
-        self.curComment.placeId = placeIdAux;
-    }
-    
-    if([self.place.title isEqualToString:@"Aulas 3"])
-    {
-        NSLog(@"showComments 1");
-        placeIdAux = [NSString stringWithFormat:@"10" ];
-        self.curComment.placeId = placeIdAux;
-    }
-    if([self.place.title isEqualToString:@"Aulas 4"])
-    {
-        NSLog(@"showComments 2");
-        placeIdAux = [NSString stringWithFormat:@"11" ];
-        self.curComment.placeId = placeIdAux;
-    }
-    if([self.place.title isEqualToString:@"Starbucks"])
-    {
-        NSLog(@"showComments 2");
-        placeIdAux = [NSString stringWithFormat:@"12" ];
-        self.curComment.placeId = placeIdAux;
-    }
 
-    if([self.place.title isEqualToString:@"Campos Escamilla"])
+    //if([[[self.selectedPlaceComments objectAtIndex:indexPath.row] placeId]intValue] == [self.placeIdAux intValue])
     {
-        NSLog(@"showComments 2");
-        placeIdAux = [NSString stringWithFormat:@"13" ];
-        self.curComment.placeId = placeIdAux;
-    }
-    
-    if([self.place.title isEqualToString:@"Domo acuatico"])
-    {
-        NSLog(@"showComments 1");
-        placeIdAux = [NSString stringWithFormat:@"14" ];
-        self.curComment.placeId = placeIdAux;
-    }
-    if([self.place.title isEqualToString:@"Biblioteca"])
-    {
-        NSLog(@"showComments 2");
-        placeIdAux = [NSString stringWithFormat:@"15" ];
-        self.curComment.placeId = placeIdAux;
-    }
-    if([self.place.title isEqualToString:@"CEDES"])
-    {
-        NSLog(@"showComments 2");
-        placeIdAux = [NSString stringWithFormat:@"16" ];
-        self.curComment.placeId = placeIdAux;
-    }
-    
-
-
-    
-    NSLog(@"compara %@ vs %@", [[self.comments objectAtIndex:indexPath.row] placeId],placeIdAux);
-    if([[[self.comments objectAtIndex:indexPath.row] placeId]intValue] == [placeIdAux intValue])
-    {
-        cell.textLabel.text = [[self.comments objectAtIndex:indexPath.row] comment];
+        cell.textLabel.text = [[self.selectedPlaceComments objectAtIndex:indexPath.row] comment];
         cell.textLabel.font = [UIFont fontWithName:@"System" size:10];
     }
     return cell;
@@ -231,7 +230,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.curComment = [self.comments objectAtIndex:indexPath.row];
+    self.curComment = [self.selectedPlaceComments objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"CommentInfo" sender:self];
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }

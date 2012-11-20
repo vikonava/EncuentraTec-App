@@ -73,7 +73,7 @@
         NSDictionary *t = [response objectAtIndex:i];
         temp = [[Comment alloc] initWithPlaceId:[t objectForKey:@"place_id"] comment:[t objectForKey:@"comment"]];
         
-        NSLog(@" place id: %@",temp.placeId);
+        
         [self.comments addObject:temp];
         [temp release];
     }
@@ -124,7 +124,7 @@
     Place *temp;
     for(int i=0; i<[response count]; i++) {
         NSDictionary *t = [response objectAtIndex:i];
-        temp = [[Place alloc] initWithTitle:[t objectForKey:@"title"] andCoordinate:CLLocationCoordinate2DMake([[t objectForKey:@"latitude"] floatValue] , [[t objectForKey:@"longitude"] floatValue]) imageNamed:[t objectForKey:@"image"] subtitle:[t objectForKey:@"schedule"] photo:[t objectForKey:@"photo"] description:[t objectForKey:@"description"]];
+        temp = [[Place alloc] initWithTitle:[t objectForKey:@"title"] placeType:[t objectForKey:@"place_type"] andCoordinate:CLLocationCoordinate2DMake([[t objectForKey:@"latitude"] floatValue] , [[t objectForKey:@"longitude"] floatValue]) imageNamed:[t objectForKey:@"image"] subtitle:[t objectForKey:@"schedule"] photo:[t objectForKey:@"photo"] description:[t objectForKey:@"description"]];
         
         [self.places addObject:temp];
         [temp release];

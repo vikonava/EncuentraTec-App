@@ -9,6 +9,7 @@
 #import "PlaceInfoViewController.h"
 #import "PlaceDescriptionViewController.h"
 #import "CommentsViewController.h"
+#import "MenuViewController.h"
 #import "Place.h"
 
 @interface PlaceInfoViewController ()
@@ -32,7 +33,14 @@
 	// Do any additional setup after loading the view.
     self.title = self.curPlace.title;
     self.placeImage.image = self.curPlace.photo;
-    self.tableViewOptions = [[NSArray alloc] initWithObjects:@"Descripcion", @"Comentarios", nil];
+    if([self.curPlace.placeType intValue] == 1 )
+    {
+        self.tableViewOptions = [[NSArray alloc] initWithObjects:@"Descripcion", @"Comentarios", nil];
+    }
+    else
+    {
+        self.tableViewOptions = [[NSArray alloc] initWithObjects:@"Descripcion", @"Comentarios", @"Menu",nil];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -73,6 +81,10 @@
         case 1:
             [self performSegueWithIdentifier:@"commentsList" sender:self];
         break;
+        case 2:
+            [self performSegueWithIdentifier:@"menu" sender:self];
+        break;
+            
             
     }
 }
@@ -88,6 +100,11 @@
         CommentsViewController *showComments = (CommentsViewController *)segue.destinationViewController;
         showComments.place = self.curPlace;
                 
+    }
+    if ([segue.identifier isEqualToString:@"menu"]) {
+        MenuViewController *menu = (MenuViewController *)segue.destinationViewController;
+        menu.place = self.curPlace;
+        
     }
     
 }

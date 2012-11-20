@@ -107,11 +107,42 @@
                         <outlet property="placeImage" destination="tUY-mq-IYO" id="a4E-50-RPV"/>
                         <segue destination="xAq-go-7ke" kind="push" identifier="placeDescription" id="ZOE-pc-hKH"/>
                         <segue destination="7Vr-KT-hbl" kind="push" identifier="commentsList" id="Kug-v5-CtU"/>
+                        <segue destination="X1x-QW-uJq" kind="push" identifier="menu" id="bPz-qs-9zJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="omv-v5-ENV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1565" y="-498"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="27e-NM-dFS">
+            <objects>
+                <viewController id="X1x-QW-uJq" customClass="MenuViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gIC-mH-nOb">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="de1-hh-0d4">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="X1x-QW-uJq" id="VP6-Bx-ZUR"/>
+                                    <outlet property="delegate" destination="X1x-QW-uJq" id="cu2-kD-mEa"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="de1-hh-0d4" firstAttribute="trailing" secondItem="gIC-mH-nOb" secondAttribute="trailing" type="default" id="1sI-iv-2AG"/>
+                            <constraint firstItem="de1-hh-0d4" firstAttribute="top" secondItem="gIC-mH-nOb" secondAttribute="top" type="default" id="2eW-Me-F2D"/>
+                            <constraint firstItem="de1-hh-0d4" firstAttribute="bottom" secondItem="gIC-mH-nOb" secondAttribute="bottom" type="default" id="30A-Nm-lRP"/>
+                            <constraint firstItem="de1-hh-0d4" firstAttribute="leading" secondItem="gIC-mH-nOb" secondAttribute="leading" type="default" id="9Wk-oH-inF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="3dr-tX-IbP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vkb-k6-cOJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2108" y="-1300"/>
         </scene>
         <!--Comments View Controller-->
         <scene sceneID="MF0-jw-TMj">
@@ -148,7 +179,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="367" id="pTm-h7-akH"/>
                                 </constraints>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -524,6 +555,9 @@
         </class>
         <class className="MainTabBarController" superclassName="UITabBarController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MainTabBarController.h"/>
+        </class>
+        <class className="MenuViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MenuViewController.h"/>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>

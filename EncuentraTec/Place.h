@@ -20,5 +20,6 @@
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic, retain) UIImage *photo;
 @property (nonatomic, retain) NSString *description;
-- (id)initWithTitle:(NSString *)ttl andCoordinate:(CLLocationCoordinate2D)c2d imageNamed:(NSString *)imagen subtitle:(NSString *)subt photo:(NSString *)photourl description:(NSString *)placeDescription;
+@property ( nonatomic, retain)NSString *placeType;
+- (id)initWithTitle:(NSString *)ttl placeType:(NSString *)tipo andCoordinate:(CLLocationCoordinate2D)c2d imageNamed:(NSString *)imagen subtitle:(NSString *)subt photo:(NSString *)photourl description:(NSString *)placeDescription;
 @end

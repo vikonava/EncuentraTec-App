@@ -14,6 +14,8 @@
 @interface CommentsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic,retain) NSMutableArray *comments;
+@property (nonatomic, retain) NSMutableArray *selectedPlaceComments;
 @property (nonatomic, retain) Comment *curComment;
 @property (retain, nonatomic) Place *place;
+@property (retain, nonatomic) NSString *placeIdAux;
 @end
