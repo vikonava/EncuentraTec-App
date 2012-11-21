@@ -9,9 +9,9 @@
 #import "Place.h"
 
 @implementation Place
-@synthesize title, coordinate, image, subtitle, photo, placeType;
+@synthesize title, coordinate, image, subtitle, photo, placeType, nid;
  
-- (id)initWithTitle:(NSString *)ttl placeType:(NSString *)tipo  andCoordinate:(CLLocationCoordinate2D)c2d imageNamed:(NSString *)imagen subtitle:(NSString *)subt photo:(NSString *)photourl description:(NSString *)placeDescription{
+- (id)initWithTitle:(NSString *)ttl placeType:(NSString *)tipo  andCoordinate:(CLLocationCoordinate2D)c2d imageNamed:(NSString *)imagen subtitle:(NSString *)subt photo:(NSString *)photourl description:(NSString *)placeDescription id:(NSString *)nnid{
 	[super init];
 	self.title = ttl;
     self.subtitle = subt;
@@ -20,6 +20,7 @@
     self.photo = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:photourl]]];
     self.description = placeDescription;
     self.placeType = tipo;
+    self.nid = nnid;
 	return self;
 }
  

@@ -32,6 +32,11 @@
     self.precios = [[NSArray alloc] initWithObjects:@"$41.00", @"$15.00", nil];
 }
 
+- (void)dealloc {
+    [_precios release];
+    [_productos release];
+    [super dealloc];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

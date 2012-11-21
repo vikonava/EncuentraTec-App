@@ -108,6 +108,7 @@
                         <segue destination="xAq-go-7ke" kind="push" identifier="placeDescription" id="ZOE-pc-hKH"/>
                         <segue destination="7Vr-KT-hbl" kind="push" identifier="commentsList" id="Kug-v5-CtU"/>
                         <segue destination="X1x-QW-uJq" kind="push" identifier="menu" id="bPz-qs-9zJ"/>
+                        <segue destination="Khb-5b-KfM" kind="push" identifier="addComment" id="1vO-ua-XvK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="omv-v5-ENV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -142,7 +143,53 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vkb-k6-cOJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2108" y="-1300"/>
+            <point key="canvasLocation" x="2104" y="-1400"/>
+        </scene>
+        <!--Add Comment View Controller-->
+        <scene sceneID="xz2-Va-KFm">
+            <objects>
+                <viewController id="Khb-5b-KfM" customClass="AddCommentViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vfg-xE-oNd">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LO1-FI-jzq">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="229" id="cZA-aS-xf6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="42o-fu-b4A">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Agregar">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="oprimioBoton:" destination="Khb-5b-KfM" eventType="touchUpInside" id="Q1c-YW-cx1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LO1-FI-jzq" firstAttribute="top" secondItem="Vfg-xE-oNd" secondAttribute="top" constant="27" id="MR8-eD-yr6"/>
+                            <constraint firstItem="42o-fu-b4A" firstAttribute="centerX" secondItem="LO1-FI-jzq" secondAttribute="centerX" type="default" id="Mpo-8I-bSd"/>
+                            <constraint firstItem="42o-fu-b4A" firstAttribute="centerX" secondItem="Vfg-xE-oNd" secondAttribute="centerX" type="default" id="cO8-JH-Fiz"/>
+                            <constraint firstItem="42o-fu-b4A" firstAttribute="top" secondItem="Vfg-xE-oNd" secondAttribute="top" constant="100" id="qth-ih-eRU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="K1m-zo-Uxh"/>
+                    <connections>
+                        <outlet property="commentTextField" destination="LO1-FI-jzq" id="Cku-mq-Mfp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oIP-AH-eJ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2110" y="-851"/>
         </scene>
         <!--Comments View Controller-->
         <scene sceneID="MF0-jw-TMj">
@@ -164,7 +211,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kzw-S7-fRp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2117" y="-635"/>
+            <point key="canvasLocation" x="2117" y="-193"/>
         </scene>
         <!--Comment Info View Controller-->
         <scene sceneID="h7d-te-yqy">
@@ -198,7 +245,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LrK-kk-e0z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2570" y="-642"/>
+            <point key="canvasLocation" x="2610" y="-193"/>
         </scene>
         <!--Place Description View Controller - Descripción-->
         <scene sceneID="zdF-9y-ihn">
@@ -231,7 +278,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Har-RY-QUR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2108" y="88"/>
+            <point key="canvasLocation" x="2117" y="438"/>
         </scene>
         <!--Load View-->
         <scene sceneID="0KD-7A-0CA">
@@ -530,67 +577,6 @@
         <image name="map" width="16" height="16"/>
         <image name="teacher" width="16" height="16"/>
     </resources>
-    <classes>
-        <class className="CommentInfoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CommentInfoViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="longComment" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="CommentsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CommentsViewController.h"/>
-        </class>
-        <class className="FirstViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="myMap" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-        <class className="LoadView" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoadView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
-            </relationships>
-        </class>
-        <class className="MainTabBarController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainTabBarController.h"/>
-        </class>
-        <class className="MenuViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MenuViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="PlaceDescriptionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlaceDescriptionViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="description" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="PlaceInfoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlaceInfoViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="optionsTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="placeImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="TeacherInfoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TeacherInfoViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="extension" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="office" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="phone" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="photo" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="TeachersViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TeachersViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -10,6 +10,7 @@
 #import "PlaceDescriptionViewController.h"
 #import "CommentsViewController.h"
 #import "MenuViewController.h"
+#import "AddCommentViewController.h"
 #import "Place.h"
 
 @interface PlaceInfoViewController ()
@@ -35,11 +36,11 @@
     self.placeImage.image = self.curPlace.photo;
     if([self.curPlace.placeType intValue] == 1 )
     {
-        self.tableViewOptions = [[NSArray alloc] initWithObjects:@"Descripcion", @"Comentarios", nil];
+        self.tableViewOptions = [[NSArray alloc] initWithObjects:@"Descripcion",@"Agregar Comentario", @"Comentarios", nil];
     }
     else
     {
-        self.tableViewOptions = [[NSArray alloc] initWithObjects:@"Descripcion", @"Comentarios", @"Menu",nil];
+        self.tableViewOptions = [[NSArray alloc] initWithObjects:@"Descripcion",@"Agregar Comentario", @"Comentarios", @"Menu",nil];
     }
 }
 
@@ -79,9 +80,12 @@
             [self performSegueWithIdentifier:@"placeDescription" sender:self];
         break;
         case 1:
-            [self performSegueWithIdentifier:@"commentsList" sender:self];
+            [self performSegueWithIdentifier:@"addComment" sender:self];
         break;
         case 2:
+            [self performSegueWithIdentifier:@"commentsList" sender:self];
+        break;
+        case 3:
             [self performSegueWithIdentifier:@"menu" sender:self];
         break;
             
@@ -99,6 +103,7 @@
     if ([segue.identifier isEqualToString:@"commentsList"]) {
         CommentsViewController *showComments = (CommentsViewController *)segue.destinationViewController;
         showComments.place = self.curPlace;
+        showComments.placeId = self.curPlace.nid;
                 
     }
     if ([segue.identifier isEqualToString:@"menu"]) {
@@ -106,6 +111,13 @@
         menu.place = self.curPlace;
         
     }
+    if ([segue.identifier isEqualToString:@"addComment"]) {
+        AddCommentViewController *add = (AddCommentViewController *)segue.destinationViewController;
+        add.place = self.curPlace;
+        add.placeId = self.curPlace.nid;
+        
+    }
+    
     
 }
 

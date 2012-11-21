@@ -17,9 +17,10 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *subtitle;
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
+@property (nonatomic, retain) NSString *nid;
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic, retain) UIImage *photo;
 @property (nonatomic, retain) NSString *description;
 @property ( nonatomic, retain)NSString *placeType;
-- (id)initWithTitle:(NSString *)ttl placeType:(NSString *)tipo andCoordinate:(CLLocationCoordinate2D)c2d imageNamed:(NSString *)imagen subtitle:(NSString *)subt photo:(NSString *)photourl description:(NSString *)placeDescription;
+- (id)initWithTitle:(NSString *)ttl placeType:(NSString *)tipo andCoordinate:(CLLocationCoordinate2D)c2d imageNamed:(NSString *)imagen subtitle:(NSString *)subt photo:(NSString *)photourl description:(NSString *)placeDescription id:(NSString *)nnid;
 @end

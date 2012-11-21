@@ -18,4 +18,6 @@
 @property (nonatomic, retain) Comment *curComment;
 @property (retain, nonatomic) Place *place;
 @property (retain, nonatomic) NSString *placeIdAux;
+
+@property(retain, nonatomic) NSString *placeId;
 @end

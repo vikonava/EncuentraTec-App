@@ -12,5 +12,5 @@
 @property (retain, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (retain, nonatomic) NSMutableArray *teachers;
 @property (retain, nonatomic) NSMutableArray *places;
-@property (retain, nonatomic) NSMutableArray *comments;
+
 @end

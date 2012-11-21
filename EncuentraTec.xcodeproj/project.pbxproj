@@ -65,6 +65,7 @@
 		FB9939E51654179E00AFDC8A /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9939E41654179E00AFDC8A /* CommentsViewController.m */; };
 		FB9939E91654186800AFDC8A /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9939E81654186800AFDC8A /* Comment.m */; };
 		FB993A2A165433E700AFDC8A /* CommentInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB993A29165433E700AFDC8A /* CommentInfoViewController.m */; };
+		FBB0B3A2165D472700453DAE /* AddCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB0B3A1165D472700453DAE /* AddCommentViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -157,6 +158,8 @@
 		FB9939E81654186800AFDC8A /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
 		FB993A28165433E700AFDC8A /* CommentInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentInfoViewController.h; sourceTree = "<group>"; };
 		FB993A29165433E700AFDC8A /* CommentInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentInfoViewController.m; sourceTree = "<group>"; };
+		FBB0B3A0165D472700453DAE /* AddCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCommentViewController.h; sourceTree = "<group>"; };
+		FBB0B3A1165D472700453DAE /* AddCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCommentViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +238,8 @@
 				FB993A29165433E700AFDC8A /* CommentInfoViewController.m */,
 				FB5C76C0165C33AD006660BC /* MenuViewController.h */,
 				FB5C76C1165C33AD006660BC /* MenuViewController.m */,
+				FBB0B3A0165D472700453DAE /* AddCommentViewController.h */,
+				FBB0B3A1165D472700453DAE /* AddCommentViewController.m */,
 			);
 			path = EncuentraTec;
 			sourceTree = "<group>";
@@ -432,6 +437,7 @@
 				FB9939E91654186800AFDC8A /* Comment.m in Sources */,
 				FB993A2A165433E700AFDC8A /* CommentInfoViewController.m in Sources */,
 				FB5C76C2165C33AD006660BC /* MenuViewController.m in Sources */,
+				FBB0B3A2165D472700453DAE /* AddCommentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

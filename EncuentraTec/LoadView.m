@@ -33,53 +33,20 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self.activityIndicator startAnimating];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     self.teachers = [[NSMutableArray alloc] init];
     self.places = [[NSMutableArray alloc] init];
-    self.comments = [[NSMutableArray alloc]init];
     [self getTeacherList];
     NSLog(@"Teachers Done");
     [self getPlaceList];
     NSLog(@"Places Done");
-    [self getCommentList];
-    NSLog(@"Comments Done");
     [self performSegueWithIdentifier:@"infoLoaded" sender:self];
 }
 
 
-- (void)getCommentList {
-    NSString *filePath = [[NSString alloc]initWithFormat:@"%@", [self dataFilePath:@"comments.plist"]];
-    NSArray *response;
-    NSString *url;
-    int numberOfPlaces = [self.places count];
-    if (false) {
-        response = [[[NSArray alloc] initWithContentsOfFile:filePath] autorelease];
-    } else {
-        for(int i = 1;i<=numberOfPlaces;i++)
-        {
-            url = [NSString stringWithFormat:@"places/%d/comments.json",i];
-            RAILSRequest *req = [[RAILSRequest alloc] initWithUrlString:url requestData:[NSMutableDictionary dictionaryWithObject:@"" forKey:@"id"]];
-            response = [req synchronousGetJsonRequest];
-            [req release];
-            
-            [response writeToFile:filePath atomically:YES];
-        }
-        
-    }
-    Comment *temp;
-    for(int i=0; i<[response count]; i++) {
-        NSDictionary *t = [response objectAtIndex:i];
-        temp = [[Comment alloc] initWithPlaceId:[t objectForKey:@"place_id"] comment:[t objectForKey:@"comment"]];
-        
-        
-        [self.comments addObject:temp];
-        [temp release];
-    }
-    [filePath release];
-
-}
 
 
 - (void)getTeacherList {
@@ -124,8 +91,7 @@
     Place *temp;
     for(int i=0; i<[response count]; i++) {
         NSDictionary *t = [response objectAtIndex:i];
-        temp = [[Place alloc] initWithTitle:[t objectForKey:@"title"] placeType:[t objectForKey:@"place_type"] andCoordinate:CLLocationCoordinate2DMake([[t objectForKey:@"latitude"] floatValue] , [[t objectForKey:@"longitude"] floatValue]) imageNamed:[t objectForKey:@"image"] subtitle:[t objectForKey:@"schedule"] photo:[t objectForKey:@"photo"] description:[t objectForKey:@"description"]];
-        
+        temp = [[Place alloc] initWithTitle:[t objectForKey:@"title"] placeType:[t objectForKey:@"place_type"] andCoordinate:CLLocationCoordinate2DMake([[t objectForKey:@"latitude"] floatValue] , [[t objectForKey:@"longitude"] floatValue]) imageNamed:[t objectForKey:@"image"] subtitle:[t objectForKey:@"schedule"] photo:[t objectForKey:@"photo"] description:[t objectForKey:@"description"] id:[t objectForKey:@"id"]];
         [self.places addObject:temp];
         [temp release];
     }
@@ -157,7 +123,6 @@
     MainTabBarController *main = (MainTabBarController *)segue.destinationViewController;
     main.teachers = self.teachers;
     main.places = self.places;
-    main.comments = self.comments;
     //[self.teachers release];
     //[self.places release];
 }

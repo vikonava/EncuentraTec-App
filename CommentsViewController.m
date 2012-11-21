@@ -11,6 +11,7 @@
 #import "Comment.h"
 #import "MainTabBarController.h"
 #import "CommentInfoViewController.h"
+#import "RAILSRequest.h"
 
 @interface CommentsViewController ()
 
@@ -32,116 +33,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    MainTabBarController *main = (MainTabBarController *)self.tabBarController;
-    self.comments = main.comments;
+    self.comments = [[NSMutableArray alloc]init];
+    [self getCommentList];
            
     self.selectedPlaceComments = [[NSMutableArray alloc]init];
     self.placeIdAux = [NSString alloc];
-    
 
-    if([self.place.title isEqualToString:@"Rectoria"])
-    {
-        self.placeIdAux = [NSString stringWithFormat:@"1" ];
-        self.curComment.placeId = self.placeIdAux;
-    }
-    if([self.place.title isEqualToString:@"CIAP"])
-    {
-        NSLog(@"showComments 2");
-        self.placeIdAux = [NSString stringWithFormat:@"2" ];
-        self.curComment.placeId = self.placeIdAux;
-    }
-    if([self.place.title isEqualToString:@"Gimnasio Tec"])
-    {
-        NSLog(@"showComments 2");
-        self.placeIdAux = [NSString stringWithFormat:@"3" ];
-        self.curComment.placeId = self.placeIdAux;
-    }
-    
-    if([self.place.title isEqualToString:@"Estadio Tecnologico"])
-    {
-        self.placeIdAux = [NSString stringWithFormat:@"4" ];
-        self.curComment.placeId = self.placeIdAux;
-    }
-    if([self.place.title isEqualToString:@"Centro de Biotecnologia"])
-    {
-        self.placeIdAux = [NSString stringWithFormat:@"5" ];
-        self.curComment.placeId = self.placeIdAux;
-    }
-    if([self.place.title isEqualToString:@"Aulas 6"])
-    {
-        self.placeIdAux = [NSString stringWithFormat:@"6" ];
-        self.curComment.placeId = self.placeIdAux;
-    }
-    if([self.place.title isEqualToString:@"Aulas 7"])
-    {
-        self.placeIdAux = [NSString stringWithFormat:@"7" ];
-        self.curComment.placeId = self.placeIdAux;
-    }
-    if([self.place.title isEqualToString:@"Aulas 1"])
-    {
-        self.placeIdAux = [NSString stringWithFormat:@"8" ];
-        self.curComment.placeId = self.placeIdAux;
-    }
-    if([self.place.title isEqualToString:@"Aulas 2"])
-    {
-        self.placeIdAux = [NSString stringWithFormat:@"9" ];
-        self.curComment.placeId = self.placeIdAux;
-    }
-    
-    if([self.place.title isEqualToString:@"Aulas 3"])
-    {
-        self.placeIdAux = [NSString stringWithFormat:@"10" ];
-        self.curComment.placeId = self.placeIdAux;
-    }
-    if([self.place.title isEqualToString:@"Aulas 4"])
-    {
-        self.placeIdAux = [NSString stringWithFormat:@"11" ];
-        self.curComment.placeId = self.placeIdAux;
-    }
-    if([self.place.title isEqualToString:@"Starbucks"])
-    {
-        self.placeIdAux = [NSString stringWithFormat:@"12" ];
-        self.curComment.placeId = self.placeIdAux;
-    }
-    
-    if([self.place.title isEqualToString:@"Campos Escamilla"])
-    {
-        self.placeIdAux = [NSString stringWithFormat:@"13" ];
-        self.curComment.placeId = self.placeIdAux;
-    }
-    
-    if([self.place.title isEqualToString:@"Domo acuatico"])
-    {
-        self.placeIdAux = [NSString stringWithFormat:@"14" ];
-        self.curComment.placeId = self.placeIdAux;
-    }
-    if([self.place.title isEqualToString:@"Biblioteca"])
-    {
-        self.placeIdAux = [NSString stringWithFormat:@"15" ];
-        self.curComment.placeId = self.placeIdAux;
-    }
-    if([self.place.title isEqualToString:@"CEDES"])
-    {
-        self.placeIdAux = [NSString stringWithFormat:@"16" ];
-        self.curComment.placeId = self.placeIdAux;
-    }
-    
-    //contador de objetos en el arreglo de los comentarios dado un lugar.
-    int cont = 0;
-    for(int i = 0; i < [self.comments count]; i++)
-    {
-        NSLog(@"compara %@ vs %@", [[self.comments objectAtIndex:i] placeId],self.placeIdAux);
-        if([[[self.comments objectAtIndex:i]placeId]intValue] == [self.placeIdAux intValue])
-        {
-            NSLog(@"dentro if");
-            [self.selectedPlaceComments addObject:[self.comments objectAtIndex:i] ];
-            NSLog(@"comenta %@",[[self.selectedPlaceComments objectAtIndex:cont]comment]);
-            cont++;
-            
-        }
-        
-        
-    }
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -160,6 +57,37 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)getCommentList {
+    NSString *filePath = [[NSString alloc]initWithFormat:@""];
+    NSArray *response;
+    NSString *url;
+    if (false) {
+        response = [[[NSArray alloc] initWithContentsOfFile:filePath] autorelease];
+    } else {
+        
+        {
+            url = [NSString stringWithFormat:@"places/%@/comments.json",self.placeId];
+            RAILSRequest *req = [[RAILSRequest alloc] initWithUrlString:url requestData:[NSMutableDictionary dictionaryWithObject:@"" forKey:@"id"]];
+            response = [req synchronousGetJsonRequest];
+            [req release];
+            
+            [response writeToFile:filePath atomically:YES];
+        }
+        
+    }
+    Comment *temp;
+    for(int i=0; i<[response count]; i++) {
+        NSDictionary *t = [response objectAtIndex:i];
+        temp = [[Comment alloc] initWithPlaceId:[t objectForKey:@"place_id"] comment:[t objectForKey:@"comment"]];
+        
+        [self.comments addObject:temp];
+        [temp release];
+    }
+    [filePath release];
+    
+}
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
@@ -169,7 +97,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.selectedPlaceComments count];
+    return [self.comments count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -182,7 +110,7 @@
 
     //if([[[self.selectedPlaceComments objectAtIndex:indexPath.row] placeId]intValue] == [self.placeIdAux intValue])
     {
-        cell.textLabel.text = [[self.selectedPlaceComments objectAtIndex:indexPath.row] comment];
+        cell.textLabel.text = [[self.comments objectAtIndex:indexPath.row] comment];
         cell.textLabel.font = [UIFont fontWithName:@"System" size:10];
     }
     return cell;
@@ -230,7 +158,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.curComment = [self.selectedPlaceComments objectAtIndex:indexPath.row];
+    self.curComment = [self.comments objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"CommentInfo" sender:self];
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
